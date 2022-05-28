@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Callback Context</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function() {
+			function forEach(list, callback){
+				for (var i = 0; i < list.length; i++) {
+					callback.call(list[i], i);
+				}
+			}
+
+			var weapons = ["shuriken", "katana", "munchucks"];
+
+			forEach(weapons, function(index){
+				assert(this == weapons[index], "Got the expected value of " + weapons[index]);
+			});
+		}
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>

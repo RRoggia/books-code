@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animate Text</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function() {
+			function animateIt(elementId){
+				var elem = document.getElementById(elementId);
+				var tick = 0;
+				var timer = setInterval(function(){
+					if(tick < 100){
+						elem.style["margin-left"] = elem.style["margin-top"] = tick + 'px';
+						tick++;
+					}else{
+						clearInterval(timer);
+						assert(tick == 100, "tick accessed via closure");
+						assert(elem, "elem also accessed via closure");
+						assert(timer, "Timer reference also obtained via closure");
+					}
+				}, 10);
+			}
+			animateIt('box');
+		};
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+	<div id="box">text</div>
+</body>
+</html>

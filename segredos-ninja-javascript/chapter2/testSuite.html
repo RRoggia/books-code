@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Suite</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function(){
+			test("Assync test #1", function(){
+				pause();
+				setTimeout(function() {
+					assert(true, "A - First assertion completed");
+					resume();
+				}, 1000);
+			});
+
+			test("Assync test #2", function(){
+				pause();
+				setTimeout(function() {
+					assert(true, "B - Second assertion completed");
+					resume();
+				}, 1000);
+			});
+
+		}
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>

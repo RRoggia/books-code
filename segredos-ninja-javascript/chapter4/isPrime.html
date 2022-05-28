@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caching Function</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function() { 
+			function isPrime(value) {
+				if (!isPrime.answers) isPrime.answers = {};
+				if (isPrime.answers[value] != null) return isPrime.answers[value];
+
+				var prime = value != 1;
+
+				for (var i = 2; i < value; i++) {
+					if (value % i === 0) {
+						prime = false;
+						break;
+					}
+				}
+				return isPrime.answers[value] = prime;
+			}
+
+			assert(isPrime(5), "5 is prime!");
+			assert(isPrime.answers[5], "The answer was cached!");
+		};
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>

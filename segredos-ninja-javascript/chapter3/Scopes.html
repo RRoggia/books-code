@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scopes</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function() {
+			
+			assert(true, "|----- BEFORE OUTER -----|");
+			assert(typeof outer === "function", "outer() is in scope");
+			assert(typeof inner === "function", "inner() is in scope");
+			assert(typeof a === "number", "a is in scope");
+			assert(typeof b === "number", "b is in scope");
+			assert(typeof c === "number", "c is in scope");
+
+			function outer(){
+				assertScopes("|----- INSIDE OUTER, BEFORE a -----|");
+
+				var a = 1;
+
+				assertScopes("|----- INSIDE OUTER, AFTER a -----|");
+
+				function inner(){}
+				var b = 2;
+
+				assertScopes("|----- INSIDE OUTER, AFTER inner() AND b -----|");
+
+				if (a == 1) {
+					var c = 3;
+					
+					assertScopes("|----- INSIDE OUTER, INSIDE if -----|");
+				}
+
+				assertScopes("|----- INSIDE OUTER, OUTSIDE if -----|");
+
+				function assertScopes(description) {
+					assert(true, description);
+					assert(typeof outer === "function", "outer() is in scope");
+					assert(typeof inner === "function", "inner() is in scope");
+					assert(typeof a === "number", "a is in scope");
+					assert(typeof b === "number", "b is in scope");
+					assert(typeof c === "number", "c is in scope");
+				}
+			}
+			outer();
+
+			assert(true, "|----- AFTER OUTER -----|");
+			assert(typeof outer === "function", "outer() is in scope");
+			assert(typeof inner === "function", "inner() is in scope");
+			assert(typeof a === "number", "a is in scope");
+			assert(typeof b === "number", "b is in scope");
+			assert(typeof c === "number", "c is in scope");
+			
+		}
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arguments</title>
+	<script src="../testSuite.js"></script>
+	<script>
+		window.onload = function() {
+			function missingParameters(a, b, c) {
+				assert(a === "a", "parameter a is defined");
+				assert(b === "b", "parameter b is defined");
+				assert(c === "c", "parameter c is defined");
+				try{
+					assert(d === "d", "parameter d is defined");
+				}catch(e){
+					assert(false, "parameter d is defined");
+				}
+				assert(arguments.length === 5, "received 5 arguments");
+			}
+
+			function tooMuchParameters(a, b, c){
+				assert(a === "a", "parameter a is defined");
+				assert(!(b === "b"), "parameter b is undefined");
+				assert(!(c === "c"), "parameter c is undefined");
+				assert(arguments.length === 1, "received 1 arguments");
+			}
+
+			assert(true, "Function invoked with more arguments than its definition");
+			missingParameters("a", "b", "c", "d", "e");
+			assert(true, "Function invoked with less arguments than its definition");
+			tooMuchParameters("a");
+		}
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>

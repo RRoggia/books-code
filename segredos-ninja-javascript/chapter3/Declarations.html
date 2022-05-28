@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Declarations</title>
+	<script src="../testSuite.js"></script>
+	<script>
+
+		window.onload = function() {
+			function isNimble(){ return true; }
+			console.log(this);
+			console.log(typeof window.isNimble);
+			assert(typeof window.isNimble === "function", "isNimble() defined");
+			assert(isNimble.name === "isNimble", "isNimble has a name");
+
+			var canFly = function(){ return true; }
+
+			assert(typeof canFly === "function", "canFly() defined");
+			//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function/name
+			assert(canFly.name === "canFly", "canFly() has name --> behaviour changed since ECMAScript 2015");
+
+			window.isDeadly = function() { return true; }
+
+			assert(typeof isDeadly === "function", "isDeadly() defined");
+
+			function outer(){
+				assert(typeof inner === "function", "inner() scope before declaration");
+				function inner(){}
+				assert(typeof inner === "function", "inner() scope after declaration");
+				assert(window.inner === undefined, "inner() not in global scope");
+			}
+
+			outer();
+
+			assert(window.inner === undefined, "inner() still not in global scope");
+
+			window.wieldSword = function swingsSword(){ return true; }
+
+			assert(window.wieldSword.name === "swingsSword", "wieldSword's real name is swingsSword")
+		};
+
+	</script>
+	<style>
+		#results li.pass {color: green;}
+		#results li.fail {color: red;}
+	</style>
+</head>
+<body>
+	<ul id="results"></ul>
+</body>
+</html>
