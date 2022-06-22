@@ -17,6 +17,6 @@ public class Insertion {
 			}
 		}
 		System.out.println("For: " + count);
-		System.out.println("Swap: " + count);
+		System.out.println("Swap: " + swap);
 	}
 }

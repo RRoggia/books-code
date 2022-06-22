@@ -35,3 +35,39 @@ i  j  0 1 2 3 4 5 6 7 8 9 0 1
 11 4  A E E I O Q S S T U Y N
 	  A E E I N O Q S S T U Y
 
+2.1.6
+For an input as a identical array. Insertion sort is best.
+Insertion sort it wouldn't require swaps and would require N-1 compares (linear time).
+Meanwhile, selection sort would require N²/2 compares and no swaps.
+
+2.1.7
+For an input as a reverse array. Selection is best.
+Insertion sort would require N²/2 compares and n²/2 swaps.
+Selection sort would require N²/2 compares and N/2 swaps.
+
+2.1.8
+Quadratic. It's only linear when is already sorted.
+
+2.1.9
+     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 
+     E A S Y S H E L L S O R T Q U E S T I O N
+13   E A E S S H E L L S O R T Q U S Y T I O N
+4	 E A E L L H E O N Q I R S S O S T T U S Y
+1    A E E E H I L L N O O Q R S S S S T T U Y
+
+2.10.12
+Because the selection sort is insensitive for the input, it always will do N²/2 comparisons, no matter which input.
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+

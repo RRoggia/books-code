@@ -39,7 +39,7 @@ public class Bag<T> implements Iterable<T> {
 
 		@Override
 		public boolean hasNext() {
-			return position.next != null;
+			return position != null;
 		}
 
 		@Override

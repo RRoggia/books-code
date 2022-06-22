@@ -2,7 +2,7 @@
 Authors: Robert Sedgewick and Kevin Wayne
 
 ## 2 - Sorting
-### Selection Sort
+### Selection
 Search for minor item in the array swap with *i*th position
 
 Properties:
@@ -12,3 +12,23 @@ Properties:
 - Max number of swaps occur when you have an array that the second position forwared are sorted and the first item is higher than all other items. "9,0,1,2,3,4,5,6,7,8".
 
 ![Selection Sort example](./images/selection-example.png)
+
+### Insertion
+
+### Shell
+
+### Merge
+
+#### Bottom Up
+
+### Quick
+
+#### 3 way
+
+### Priority Queue
+
+#### Ordered (eager)
+
+#### Unordered (lazy)
+
+#### Binary Heap

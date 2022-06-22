@@ -28,6 +28,6 @@ public class Shell {
 			incrementalSequence = incrementalSequence / 3;
 		}
 		System.out.println("For: " + count);
-		System.out.println("Swap: " + count);
+		System.out.println("Swap: " + swap);
 	}
 }
