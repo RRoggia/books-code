@@ -32,3 +32,29 @@ Properties:
 #### Unordered (lazy)
 
 #### Binary Heap
+
+Reheapify: Restoring the heap to a valid state.
+
+- Bottom-up (swim) : a node’s key becomes larger than that node’s parent’s key,
+
+- Top-down (sink): a node’s key becomes smaller than one or both of that node’s children’s keys
+
+## 4 - Graphs
+
+### Depth First Search (DFS)
+
+Good to answers:
+
+- Connectivity. 
+  - Are two vertices connected?
+  - How many connected components does the graph have?
+- Single source paths.
+  - Is there a path to from s to a given vertex v? If so, find such a path
+
+### Breadth First Search (BFS)
+
+Good to answers:
+
+- Single source shortest paths.
+  - Is there a path from s to a given target vertex v? If so, find a shortest such path (one with a minimal number of edges)
+

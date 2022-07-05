@@ -6,13 +6,13 @@ public class DepthFirstPaths implements Paths {
 
 	private int source;
 	private boolean[] marked;
-	private int[] edgeTo;
+	public int[] edgeTo;
 
-	public DepthFirstPaths(Graph g, int s) {
+	public DepthFirstPaths(Graph g, int source) {
 		marked = new boolean[g.vertices()];
 		edgeTo = new int[g.vertices()];
-		this.source = s;
-		dfs(g, s);
+		this.source = source;
+		dfs(g, source);
 	}
 
 	private void dfs(Graph g, int s) {
@@ -27,17 +27,17 @@ public class DepthFirstPaths implements Paths {
 	}
 
 	@Override
-	public boolean hasPathTo(int v) {
-		return marked[v];
+	public boolean hasPathTo(int vertexDestionation) {
+		return marked[vertexDestionation];
 	}
 
 	@Override
-	public Iterable<Integer> pathTo(int v) {
-		if (!hasPathTo(v)) {
+	public Iterable<Integer> pathTo(int vertexDestination) {
+		if (!hasPathTo(vertexDestination)) {
 			return null;
 		}
 		Stack<Integer> path = new Stack<Integer>();
-		for (int x = v; x != this.source; x = this.edgeTo[x]) {
+		for (int x = vertexDestination; x != this.source; x = this.edgeTo[x]) {
 			path.push(x);
 		}
 		path.push(this.source);

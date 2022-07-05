@@ -51,4 +51,13 @@ public class Bag<T> implements Iterable<T> {
 
 	}
 
+	@Override
+	public String toString() {
+		String string = "";
+		for (T in : this) {
+			string += in.toString() + ", ";
+		}
+		return "Bag " + string;
+	}
+
 }
