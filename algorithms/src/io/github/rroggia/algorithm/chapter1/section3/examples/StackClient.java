@@ -7,6 +7,7 @@ public class StackClient {
 		var stack = new Stack<String>();
 		var letters = "abcdefghij".split("");
 		List.of(letters).forEach(s -> stack.push(s));
+		System.out.println(stack.peek());
 
 		System.out.println(stack.isEmpty());
 		System.out.println(stack.length());

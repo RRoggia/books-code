@@ -21,4 +21,6 @@ public interface OrderedST<Key extends Comparable<Key>, Value> extends ST<Key, V
 
 	Iterable<Key> keys(Key lower, Key higher);
 
+	Iterable<Key> keys();
+
 }

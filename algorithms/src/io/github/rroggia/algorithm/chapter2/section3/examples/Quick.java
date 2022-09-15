@@ -1,7 +1,5 @@
 package io.github.rroggia.algorithm.chapter2.section3.examples;
 
-import java.util.Arrays;
-
 import edu.princeton.cs.algs4.StdRandom;
 
 public class Quick {

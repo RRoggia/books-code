@@ -1,7 +1,7 @@
 package io.github.rroggia.algorithm.chapter2.section4.examples;
 
 public class MaxPQ<Key extends Comparable<Key>> {
-	Key items[];
+	Key items[]; // <Size, Key>
 	private int size = 0;
 
 	MaxPQ() {
