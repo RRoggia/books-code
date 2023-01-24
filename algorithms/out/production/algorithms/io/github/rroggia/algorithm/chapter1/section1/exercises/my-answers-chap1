@@ -1,0 +1,33 @@
+1.1.1
+
+a.
+b.
+c.true
+
+1.1.2
+a. double
+b. double
+c. boolean
+d. string
+
+1.1.4
+a. there is no then
+b. missing() in the if
+c. works
+d. missing semi-collon before else
+
+1.1.6
+
+
+1.1.7
+a. 
+b. 499500
+c. 
+
+1.1.8
+a. b
+b. 197 (charcode)
+c. e (charcode then char)
+
+1.1.12
+"0, 1, 2, ..., 8, 9"

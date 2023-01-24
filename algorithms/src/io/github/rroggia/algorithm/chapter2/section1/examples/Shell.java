@@ -2,12 +2,12 @@ package io.github.rroggia.algorithm.chapter2.section1.examples;
 
 public class Shell {
 	public static void sort(Comparable[] items) {
-		int lenght = items.length;
+		int length = items.length;
 		int incrementalSequence = 1;
 		var count = 0;
 		var swap = 0;
 
-		while (incrementalSequence < lenght / 3) {
+		while (incrementalSequence < length / 3) {
 			incrementalSequence = 3 * incrementalSequence + 1;
 		}
 

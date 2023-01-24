@@ -6,8 +6,8 @@ public class SampleClient {
 	public static void main(String[] args) {
 		// ST<> st = new
 
-		var input = "searchexample";
-		var array = Arrays
+		String input = "searchexample";
+		Object[] array = Arrays
 				.stream(input.split(""))
 				.map(e -> e.toUpperCase())
 				.toArray();
